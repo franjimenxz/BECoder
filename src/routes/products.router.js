@@ -1,7 +1,7 @@
 import { Router } from "express";
 import mongoose from "mongoose";
-import ProductDBService from "../../dao/services/db/ProductDBService.js";
-import { productModel } from "../../dao/models/product.model.js";
+import ProductDBService from "../dao/services/db/ProductDBService.js";
+import { productModel } from "../dao/models/product.model.js";
 
 const router = Router();
 const ProductService = new ProductDBService();

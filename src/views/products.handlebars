@@ -1,4 +1,23 @@
 <div class="products">
+  <div class="data-user">
+    {{#if user}}
+      <h1>Bienvenido {{user.first_name}} {{user.last_name}}</h1>
+      <p>Email: {{user.email}}</p>
+      <p>Edad: {{user.age}}</p>
+      <a href="/api/sessions/logout">Cerrar sesion</a>
+
+      {{#if rol}}
+        <p>Es admin</p>
+      {{else}}
+        <p>No es admin</p>
+      {{/if}}
+    {{else}}
+      <h1>No estas logueado</h1>
+      <a href="/login">Iniciar sesion</a>
+      <a href="/register">Registrarse</a>
+    {{/if}}
+
+  </div>
   <span class="products__list">
     {{#each products}}
       <div class="product" data-product-id={{this._id}}>
