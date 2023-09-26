@@ -13,6 +13,8 @@ import sessionsRouter from "./routes/sessions.router.js";
 import sessionsViewRouter from "./routes/sessionsView.router.js";
 import session from "express-session";
 import mongoStore from "connect-mongo";
+import passport from "passport";
+import passportConfig from "./config/passport.config.js";
 
 const app = express();
 dotenv.config();
@@ -33,14 +35,17 @@ try {
     session({
       store: mongoStore.create({
         mongoUrl: db,
-        mongoOptions: { useUnifiedTopology: true },
         ttl: 100,
+        mongoOptions: { useUnifiedTopology: true },
       }),
       secret: "secretPhrase",
       resave: false,
       saveUninitialized: false,
     }),
   );
+  passportConfig();
+  app.use(passport.initialize());
+  app.use(passport.session());
 } catch (error) {
   console.log(error);
 }

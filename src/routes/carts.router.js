@@ -1,7 +1,7 @@
 import { Router } from "express";
 import mongoose from "mongoose";
 const router = Router();
-import CartDBService from "../../dao/services/db/CartDBService.js";
+import CartDBService from "../dao/services/db/CartDBService.js";
 
 const CartService = new CartDBService();
 router.get("/", async (req, res) => {

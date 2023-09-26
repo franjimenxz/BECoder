@@ -1,5 +1,5 @@
 import { Router } from "express";
-import MessageDBService from "../../dao/services/db/MessageDBService.js";
+import MessageDBService from "../dao/services/db/MessageDBService.js";
 const router = Router();
 
 export const MessageService = new MessageDBService();

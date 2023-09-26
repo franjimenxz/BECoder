@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductDBService from "../../dao/services/db/ProductDBService.js";
+import ProductDBService from "../dao/services/db/ProductDBService.js";
 import axios from "axios";
 
 const router = Router();
