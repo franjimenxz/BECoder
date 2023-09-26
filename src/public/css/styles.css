@@ -1,0 +1,27 @@
+.products__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.products__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+.product,
+.cart__item {
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+}
