@@ -1,0 +1,7 @@
+<h1>Bienvenido {{user.first_name}}</h1>
+{{#if user}}
+  <a href="/api/sessions/logout" target="_self">Logout</a>
+{{else}}
+  <a href="/login" target="_self">Login</a>
+  <a href="/register" target="_self">Register</a>
+{{/if}}
