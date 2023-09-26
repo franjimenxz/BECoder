@@ -6,11 +6,9 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    console.log(req.url);
     const { data } = await axios.get(
       `http://localhost:8080/api/products${req.url}`,
     );
-    console.log(data);
     let formatData = {
       ...data,
       prevLink: data.prevLink
@@ -26,7 +24,10 @@ router.get("/", async (req, res) => {
           )
         : data.nextLink,
     };
+    console.log(req.session);
     res.render("products", {
+      user: req.session.user,
+      rol: req.session.rol === "admin",
       products: formatData.payload,
       ...formatData,
       title: "Productos",
